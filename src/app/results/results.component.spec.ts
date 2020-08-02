@@ -20,7 +20,7 @@ describe('ResultsComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('should create Results component', () => {
     expect(component).toBeTruthy();
   });
 });

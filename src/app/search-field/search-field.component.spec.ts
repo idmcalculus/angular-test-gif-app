@@ -26,7 +26,7 @@ describe('SearchFieldComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', (inject([HttpTestingController],
+  it('should create Search component', (inject([HttpTestingController],
     (httpController: HttpTestingController) => {
     expect(component).toBeTruthy();
   })));

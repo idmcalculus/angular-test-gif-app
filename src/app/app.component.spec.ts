@@ -32,6 +32,8 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('Welcome to gif-app!');
+    if (compiled.querySelector('h1') !== null) {
+      expect(compiled.querySelector('h1').textContent).toContain('Welcome to gif-app!');
+    }
   });
 });

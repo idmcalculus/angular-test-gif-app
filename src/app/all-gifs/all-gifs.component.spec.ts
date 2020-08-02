@@ -26,7 +26,7 @@ describe('AllGifsComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', async(inject([HttpTestingController],
+  it('should create All Gifs component', async(inject([HttpTestingController],
   (httpClient: HttpTestingController) => {
     expect(component).toBeTruthy();
   })));

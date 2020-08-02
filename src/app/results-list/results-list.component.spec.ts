@@ -26,7 +26,7 @@ describe('ResultsListComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', async(inject([HttpTestingController],
+  it('should create Results Lists component', async(inject([HttpTestingController],
     (httpClient: HttpTestingController) => {
     expect(component).toBeTruthy();
   })));
