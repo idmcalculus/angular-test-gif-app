@@ -1,5 +1,6 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { async, ComponentFixture, TestBed, inject } from '@angular/core/testing';
+import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
+import { MockComponent } from 'ng2-mock-component';
 import { AllGifsComponent } from './all-gifs.component';
 
 describe('AllGifsComponent', () => {
@@ -8,7 +9,13 @@ describe('AllGifsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AllGifsComponent ]
+      imports: [
+        HttpClientTestingModule,
+      ],
+      declarations: [
+        AllGifsComponent,
+        MockComponent({ selector: 'app-results', inputs: ['result'] })
+      ]
     })
     .compileComponents();
   }));
@@ -19,7 +26,8 @@ describe('AllGifsComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('should create', async(inject([HttpTestingController],
+  (httpClient: HttpTestingController) => {
     expect(component).toBeTruthy();
-  });
+  })));
 });

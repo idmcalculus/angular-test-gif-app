@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./results.component.css']
 })
 export class ResultsComponent implements OnInit {
-  @Input() result;
+  @Input() public result: any;
 
   constructor(private router: Router) { }
 

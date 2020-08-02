@@ -1,5 +1,5 @@
 <div>
-    <ng-container *ngIf="(allResults | async).length === 0">
+    <ng-container *ngIf="(allResults | async)?.length === 0">
         <div class="text-center display_screen">
           <h3>Welcome to Giphy Search!</h3>
           <p>Type a gif keyword in the search field above to get started. Have fun!</p>
