@@ -1,10 +1,8 @@
 <div>
-    <!-- Implement result list here -->
-    <ng-container *ngIf="(allResults | async).length === 0" >
+    <ng-container *ngIf="(allResults | async).length === 0">
         <div class="text-center display_screen">
-          <h3 >Hello There!</h3>
-          <p>You haven't searched for a movie yet.</p>
-          <p>Search for a movie by typing a keyword in the searchbox above.</p>
+          <h3>Welcome to Giphy Search!</h3>
+          <p>Type a gif keyword in the search field above to get started. Have fun!</p>
         </div>
       </ng-container>
     
@@ -12,9 +10,9 @@
         <p>{{err | async}}</p>
       </div>
     
-      <div class="row">
-        <div *ngFor="let res of (allResults | async)" class="col-sm-3 my-2">
-            <app-results [res]='res'></app-results>
+      <div class="row flex-row justify-content-between">
+        <div *ngFor="let result of (allResults | async)" class="col-sm-3 flex-row justify-content-between">
+            <app-results [result]='result'></app-results>
         </div>
       </div>
 </div>

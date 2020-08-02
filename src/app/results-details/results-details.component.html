@@ -1,20 +1,17 @@
 <div>
-  <a routerLink=""> &larr;</a>
+  <a routerLink="">Home</a>
   <h3>Result Details</h3>
 </div>
-<ng-container *ngFor="let res of (allResults | async)">
-  <div *ngIf="res.id === resultId">
-    <div class="movie-card">
+<ng-container *ngFor="let result of (allResults | async)">
+  <div *ngIf="result.id === resultId">
+    <div>
     
       <div class="container">
-    
-        <a><img src="http://image.tmdb.org/t/p/w185_and_h278_bestv2{{res.poster_path}}" alt="cover" class="cover" /></a>
-          
-        <h5>{{res.title}} </h5>
-        <p class="likes">{{res.vote_count}} likes</p>  
-        <p>{{res.overview}}</p> 
-        
+        <a><img src="{{result.images.original.url}}" alt="cover" class="cover" /></a>
+        <p class="gifdetails"><span>Title:</span> {{result.title}}</p>
+        <p class="gifdetails"><span>Id:</span> {{result.id}}</p>
+        <p class="gifdetails"><span>Rating:</span> {{result.rating}}</p>
       </div> 
-    </div> <!-- end movie-card -->
+    </div>
   </div>
 </ng-container>

@@ -1,30 +1,27 @@
-import { GIF_SEARCH_ERR, GET_ALL_RESPONSES } from './actions';
-// State intterface
+import { SEARCH_ERROR, GET_RESPONSES } from './actions';
 export interface IAppState {
     allResults;
     err: string;
-    keywords;
+    gifWords;
 }
 
-// initial state of the app
 export const INITIAL_STATE: IAppState = {
     allResults: [],
     err: '',
-    keywords: []
+    gifWords: []
 };
 
-// rootReducer
 export function rootReducer(state: IAppState, action): IAppState {
-    switch(action.type) {
-        case GIF_SEARCH_ERR:
+    switch (action.type) {
+        case SEARCH_ERROR:
             return Object.assign({}, state, {
                 err: action.err
             });
-        case GET_ALL_RESPONSES:
+        case GET_RESPONSES:
             return Object.assign({}, state, {
                 allResults: action.allResults,
                 err: action.err,
-                keywords: state.keywords.concat(Object.assign({}, action.keywords))
+                gifWords: state.gifWords.concat(Object.assign({}, action.gifWords))
             });
     }
     return state;

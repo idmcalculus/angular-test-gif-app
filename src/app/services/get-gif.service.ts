@@ -6,7 +6,7 @@ import { environment as appConfig } from '../../environments/environment';
   providedIn: 'root'
 })
 export class GetGifService {
-  baseURL: string = appConfig.appUrl;
+  baseURL = `https://api.giphy.com/v1/gifs/search?api_key=deokzgUjxm6QHQdp3H3aca1LSZcCpucc&limit=25&offset=0&rating=Y&lang=en`;
 
   constructor(private http: HttpClient) { }
 

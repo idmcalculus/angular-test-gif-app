@@ -9,10 +9,11 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ResultsDetailsComponent implements OnInit {
   @select() allResults;
-  resultId = +this.route.snapshot.params.id;
+  resultId = this.route.snapshot.params.id;
 
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(private route: ActivatedRoute) {
+  }
 
   ngOnInit() {
   }
