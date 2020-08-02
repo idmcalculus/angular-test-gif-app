@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { select } from '@angular-redux/store';
+import { GetGifService } from '../services/get-gif.service';
 
 @Component({
   selector: 'app-all-gifs',
@@ -6,10 +8,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./all-gifs.component.css']
 })
 export class AllGifsComponent implements OnInit {
+  @select() gifWords;
+  results: any = [];
 
-  constructor() { }
+  constructor(private gifService: GetGifService) { }
 
   ngOnInit() {
   }
+
+  fetchGif(gifWord) {
+    this.gifService.getGif(gifWord).subscribe((data: any) => {
+        const result = {...data};
+        this.results = result.data;
+    });
+  }
+
 
 }

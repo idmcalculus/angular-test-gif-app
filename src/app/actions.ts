@@ -1,3 +1,2 @@
-export const GIF_SEARCH_ERR = 'GIF_SEARCH_ERR';
-export const GET_ALL_GIFS = 'GET_ALL_GIFS';
-export const GET_ALL_RESPONSES = 'GET_ALL_RESPONSES';
+export const SEARCH_ERROR = 'SEARCH_ERROR';
+export const GET_RESPONSES = 'GET_RESPONSES';

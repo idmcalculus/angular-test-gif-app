@@ -1,3 +1,16 @@
-<p>
-  all-gifs works!
-</p>
+<div>
+  <a routerLink="">Home</a>
+  <h3>All Gif Results</h3>
+</div>
+
+<nav aria-label="nav">
+  <ol class="nav nav-tabs">
+    <li class="nav-item" *ngFor="let gifword of (gifWords | async)"><a (click)= "fetchGif(gifword.gifWord)" class="nav-link">{{gifword.gifWord}}</a></li>
+  </ol>
+</nav>
+
+<div class="row my-3">
+  <div *ngFor="let result of results" class="col-sm-2 my-3">
+    <app-results [result]='result'></app-results>
+  </div>
+</div>
